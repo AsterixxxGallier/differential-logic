@@ -75,67 +75,10 @@ fn permutations(n: usize, k: usize) -> usize {
     factorial(n) / factorial(n - k)
 }
 
-/*fn index_in_signature(variables: usize, term: &[usize]) -> usize {
-    if let &[single] = term {
-        single
-    } else {
-        let mut result = (1..term.len()).map(|k| permutations(variables, k)).sum();
-        let mut factor = 1;
-        let mut factor_factor = variables;
-        let mut pulldowns = Vec::new();
-        for &variable in term {
-            let mut adjusted = variable - pulldowns.iter().filter(|it| **it < variable).count();
-            factor_factor -= 1;
-            factor *= factor_factor;
-            result += adjusted * factor;
-            pulldowns.push(variable);
-        }
-        result
-    }
-}*/
-
 #[cfg(test)]
 mod tests {
     use crate::Machine;
     
-    /*use crate::{index_in_signature, Machine};
-    use crate::permutations;
-
-    #[test]
-    fn test_permutations() {
-        assert_eq!(permutations(3, 0), 1);
-        assert_eq!(permutations(3, 1), 3);
-        assert_eq!(permutations(3, 2), 6);
-        assert_eq!(permutations(3, 3), 6);
-    }
-
-    #[test]
-    fn test_index_in_signature() {
-        // assert_eq!(index_in_signature(2, &[0]), 0);
-        // assert_eq!(index_in_signature(2, &[1]), 1);
-        // assert_eq!(index_in_signature(2, &[0, 1]), 2);
-        // assert_eq!(index_in_signature(2, &[1, 0]), 3);
-
-        assert_eq!(index_in_signature(3, &[0]), 0);
-        assert_eq!(index_in_signature(3, &[1]), 1);
-        assert_eq!(index_in_signature(3, &[2]), 2);
-        assert_eq!(index_in_signature(3, &[0, 1]), 3);
-        assert_eq!(index_in_signature(3, &[0, 2]), 4);
-        assert_eq!(index_in_signature(3, &[1, 0]), 5);
-        assert_eq!(index_in_signature(3, &[1, 2]), 6);
-        assert_eq!(index_in_signature(3, &[2, 0]), 7);
-        assert_eq!(index_in_signature(3, &[2, 1]), 8);
-
-        /*
-
-         0: 0
-         1: 1
-        01: 2
-        10: 3
-
-         */
-    }*/
-
     #[test]
     fn print_terms() {
         Machine::new(5, |term| {
