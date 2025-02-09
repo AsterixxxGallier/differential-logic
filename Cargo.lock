@@ -7,6 +7,7 @@ name = "differential-logic"
 version = "0.1.0"
 dependencies = [
  "itertools",
+ "linked-hash-map",
 ]
 
 [[package]]
@@ -23,3 +24,9 @@ checksum = "413ee7dfc52ee1a4949ceeb7dbc8a33f2d6c088194d9f922fb8318faf1f01186"
 dependencies = [
  "either",
 ]
+
+[[package]]
+name = "linked-hash-map"
+version = "0.5.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0717cef1bc8b636c6e1c1bbdefc09e6322da8a9321966e8928ef80d20f7f770f"
